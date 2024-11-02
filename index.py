@@ -99,6 +99,8 @@ class WeatherApp(QWidget):
             response.raise_for_status()
             data = response.json()
 
+            self.minimize_temperature(data, data2)
+
             if response.status_code == 200:
                 self.print_weather(data)
         except requests.exceptions.HTTPError as http_error:
@@ -153,7 +155,7 @@ class WeatherApp(QWidget):
         temp2 = data2["current"]["temp_c"]
         print(f"from second api {temp2}")
         average = (temperature_c + temp2) / 2
-        print(f"average is {average}")
+        print(f"average is {average:.1f}")
 
     @staticmethod
     def get_weather_emoji(weather_id):
@@ -193,3 +195,5 @@ if __name__ == "__main__":
 # 2
 # b85ee4be00f24563b96125616242210
 # http://api.weatherapi.com/v1
+
+# txhash 0xf4Bb3bFB524E76e66BC2860944100431DF3B4880

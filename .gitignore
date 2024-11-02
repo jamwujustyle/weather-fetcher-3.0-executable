@@ -1,0 +1,23 @@
+ 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# System files
+*.DS_Store
+*.log
+*.tmp
+Thumbs.db
+
+# Credentials or API keys
+*.env
